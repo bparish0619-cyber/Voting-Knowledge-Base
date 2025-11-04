@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas 2025 Ballot Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="w-full max-w-3xl mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#073B4C] mb-4">A Voter's Guide to the 2025 Texas Amendments</h1>
+            <p class="text-lg md:text-xl text-gray-700">Based on the Taylor County Sample Ballot</p>
+        </header>
+
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#073B4C] mb-6 text-center">What's On the Ballot?</h2>
+            <p class="text-gray-700 mb-6">This year, there are 17 proposed amendments to the Texas Constitution, falling into several key categories. The majority of proposals (10 of 17) are related to property tax exemptions and other tax prohibitions. The chart below shows the breakdown of all proposals by their main topic.</p>
+            <div class="chart-container" style="height:250px; max-height:250px;">
+                <canvas id="propositionsChart"></canvas>
+            </div>
+            <div id="chart-legend" class="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4"></div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#073B4C] mb-6 text-center">Visualizing Prop 13: Homestead Exemption</h2>
+            <p class="text-gray-700 mb-6">Proposition 13 is a straightforward proposal to increase the general school district homestead exemption. This exemption lowers the taxable value of your primary residence. This bar chart shows the proposed increase compared to the current exemption amount.</p>
+            <div class="chart-container" style="height:300px; max-height:350px;">
+                <canvas id="homesteadChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#073B4C] mb-6">Tax Prohibitions (New Bans)</h2>
+            <p class="text-gray-700 mb-6">These proposals aim to amend the constitution to explicitly ban certain types of taxes that Texas does not currently have, securing their prohibition for the future.</p>
+            <div class="space-y-6">
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#EF476F]">Prop 2</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To prevent future legislatures from imposing a state tax on an individual's "capital gains" (profit from selling an asset like stock), which Texas currently does not have.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment prohibiting the imposition of a tax on the realized or unrealized capital gains of an individual, family, estate, or trust."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#EF476F]">Prop 6</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To attract financial firms by constitutionally banning a tax on stock market transactions (a "securities transaction tax"), which is not currently levied in Texas.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment prohibiting the legislature from enacting a law imposing an occupation tax on certain entities that enter into transactions conveying securities..."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#EF476F]">Prop 8</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To constitutionally ban any future "death tax" (also known as an estate or inheritance tax), which Texas does not currently impose.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment to prohibit the legislature from imposing death taxes applicable to a decedent's property or the transfer of an estate, inheritance, legacy, succession, or gift."</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#06D6A0] mb-6">Property Tax Exemptions (Cuts)</h2>
+            <p class="text-gray-700 mb-6">This is the largest group of proposals. They all authorize new or increased property tax exemptions, which would lower property tax bills for specific groups or types of property.</p>
+            <div class="space-y-6">
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 5</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To lower costs for farmers and ranchers by exempting retail animal feed from property taxes, closing a gap where feed is taxed as business inventory.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment authorizing the legislature to exempt from ad valorem taxation tangible personal property consisting of animal feed held by the owner... for sale at retail"</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 7</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To expand property tax exemptions for surviving spouses of veterans who died from a service-connected condition, even if the veteran was not rated 100% disabled.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"...authorizing the legislature to provide for an exemption from ad valorem taxation of all or part of the market value of the residence homestead of the surviving spouse of a veteran who died as a result of a condition or disease... presumed under federal law to have been service-connected."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 9</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To provide a tax cut for small businesses by exempting a portion of the value of "tangible personal property" (like equipment, furniture, and inventory) from property taxes.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"...authorize the legislature to exempt from ad valorem taxation a portion of the market value of tangible personal property a person owns that is held or used for the production of income."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 10</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To provide temporary, compassionate tax relief to homeowners whose homes are completely destroyed by a fire, exempting the value of the structure while it is rebuilt.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"...authorize the legislature to provide for a temporary exemption from ad valorem taxation of the appraised value of an improvement to a residence homestead that is completely destroyed by a fire."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 11</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To provide additional property tax relief for seniors and disabled homeowners by allowing the legislature to increase their special school district homestead exemption amount.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"...authorizing the legislature to increase the amount of the exemption from ad valorem taxation by a school district... of the residence homestead of a person who is elderly or disabled."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 13</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To provide a broad-based property tax cut for all homeowners by increasing the general school district homestead exemption from $100,000 to $140,000.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment to increase the amount of the exemption of residence homesteads from ad valorem taxation by a school district from $100,000 to $140,000."</blockquote>
+                </div>
+                 <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#06D6A0]">Prop 17</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To provide a property tax exemption for landowners on the Texas-Mexico border for the value of any border security infrastructure (like walls or fences) built on their property.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"...authorize the legislature to provide for an exemption from ad valorem taxation... of real property located in a county that borders the United Mexican States that arises from the installation or construction on the property of border security infrastructure..."</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#073B4C] mb-6">State Funds, Education & Health</h2>
+            <p class="text-gray-700 mb-6">These proposals create or dedicate large state funds for technical education, water infrastructure, and dementia research.</p>
+            <div class="space-y-6">
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#FFD166]">Prop 1</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To create a reliable, long-term funding source for the Texas State Technical College system to update facilities and equipment for high-demand workforce training.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment providing for the creation of the permanent technical institution infrastructure fund... to support the capital needs of educational programs offered by the Texas State Technical College System."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#FFD166]">Prop 4</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To address future water shortages by dedicating a portion of state sales tax ($1 billion/year) to a new fund for water infrastructure repairs and new water source projects.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment to dedicate a portion of the revenue derived from state sales and use taxes to the Texas water fund and to provide for the allocation and use of that revenue."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#FFD166]">Prop 14</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To create a $3 billion state-funded institute, similar to the state's cancer research fund (CPRIT), to support research and treatment for dementia, Alzheimer's, and Parkinson's.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment providing for the establishment of the Dementia Prevention and Research Institute of Texas... and transferring to that fund $3 billion from state general revenue."</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-[#073B4C] mb-6">Government & Legal Process</h2>
+            <p class="text-gray-700 mb-6">These proposals address legal procedures and fundamental rights, including bail, judicial conduct, parental rights, and voter qualifications.</p>
+            <div class="space-y-6">
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#118AB2]">Prop 3</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To give judges more power to deny bail to individuals accused of certain violent felonies if they are deemed a future danger to the community, a standard that is currently very high.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment requiring the denial of bail under certain circumstances to persons accused of certain offenses punishable as a felony."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#118AB2]">Prop 12</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To update the rules and membership of the state commission that investigates judicial misconduct, giving it more effective tools to sanction or remove judges.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment regarding the membership of the State Commission on Judicial Conduct, the membership of the tribunal to review the commission's recommendations, and the authority of the commission... to more effectively sanction judges..."</blockquote>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#118AB2]">Prop 15</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To elevate "parental rights" (to make decisions on their child's upbringing, education, etc.) from case law (set by judges) into the state constitution itself for stronger legal protection.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment affirming that parents are the primary decision makers for their children."</blockquote>
+                </div>
+                 <div class="p-5 bg-gray-50 rounded-lg border border-gray-200 flex flex-col h-full">
+                    <span class="font-bold text-lg text-[#118AB2]">Prop 16</span>
+                    <p class="text-gray-700 mt-2 font-semibold">Logic: To explicitly add language to the state constitution that "a voter must be a United States citizen," which is already state and federal law, to serve as a clarification.</p>
+                    <blockquote class="text-sm text-gray-600 mt-3 border-l-2 border-gray-300 pl-2 italic flex-grow">"The constitutional amendment clarifying that a voter must be a United States citizen."</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 mt-8">
+            <h2 class="text-2xl font-bold text-[#073B4C] mb-6 text-center">Taylor County Vote Center Locations</h2>
+            <p class="text-gray-700 mb-6 text-center">On Election Day (Nov 4, 7am-7pm), Taylor County voters may vote at <span class="font-bold">ANY</span> of these locations.</p>
+            <div class="space-y-4">
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Abilene City Hall</p>
+                    <p class="text-sm text-gray-600">555 Walnut Street, Abilene, TX 79601 (Main Foyer)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Buffalo Gap Church of Christ</p>
+                    <p class="text-sm text-gray-600">741 Litel Street, Buffalo Gap, TX 79508 (Fellowship Hall)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Christian Service Center</p>
+                    <p class="text-sm text-gray-600">922 Woodlawn Drive, Abilene, TX 79603 (Multi-Purpose Room East Wing)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">First Baptist Church - Merkel</p>
+                    <p class="text-sm text-gray-600">307 Locust Street, Merkel, TX 79536 (Family Life Center)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">First Baptist Church - Tuscola</p>
+                    <p class="text-sm text-gray-600">702 Kent Street, Tuscola, TX 79562 (Sanctuary)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">First Church of the Nazarene</p>
+                    <p class="text-sm text-gray-600">2849 Beltway South, Abilene, TX 79606 (Gym)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Hillcrest Church of Christ</p>
+                    <p class="text-sm text-gray-600">650 E. Ambler Ave., Abilene, TX 79601 (Multi-Purpose Room - Gym)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Lawn Baptist Church</p>
+                    <p class="text-sm text-gray-600">518 Avenue D, Lawn, TX 79530 (Family Life Center)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Life Church</p>
+                    <p class="text-sm text-gray-600">2465 Old Anson Road, Abilene, TX 79603 (Chapel)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Lytle South Baptist Church</p>
+                    <p class="text-sm text-gray-600">1125 E. Industrial Blvd., Abilene, TX 79602 (Fellowship Hall)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Minda Street Church of Christ</p>
+                    <p class="text-sm text-gray-600">701 Minda Street, Abilene, TX 79602 (Multi-Purpose Room)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">New Beginnings United Pentecostal</p>
+                    <p class="text-sm text-gray-600">5535 Buffalo Gap Road, Abilene, TX 79606 (Sanctuary)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">River of Life Church</p>
+                    <p class="text-sm text-gray-600">539 Hwy 83/84, Abilene, TX 79606 (Main Foyer)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Southern Hills Church of Christ</p>
+                    <p class="text-sm text-gray-600">3666 Buffalo Gap Road, Abilene, TX 79605 (Foyer at Main Sanctuary)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Taylor County Plaza</p>
+                    <p class="text-sm text-gray-600">400 Oak Street, Abilene, TX 79602 (Suite 101-A)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Tye Community Center</p>
+                    <p class="text-sm text-gray-600">103 Scott Street, Tye, TX 79563 (Main Room)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Victory Free Methodist Church</p>
+                    <p class="text-sm text-gray-600">3333 S. 11th Street, Abilene, TX 79605 (West Building Multi-Purpose Room)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">View Baptist Church</p>
+                    <p class="text-sm text-gray-600">250 Boynton Road, Abilene, TX 79606 (Fellowship Hall)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Westminster Presbyterian Church</p>
+                    <p class="text-sm text-gray-600">4515 South 14th Street, Abilene, TX 79605 (Gym)</p>
+                </div>
+                
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">Zion Lutheran Church</p>
+                    <p class="text-sm text-gray-600">2801 Antilley Road, Abilene, TX 79606 (Large Fellowship Hall)</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function wrapLabels(label) {
+            const max = 16;
+            if (typeof label !== 'string' || label.length <= max) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > max) {
+                    if (currentLine.length > 0) {
+                        lines.push(currentLine);
+                    }
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const chartData = {
+            labels: [
+                'Property Tax Exemption', 
+                'Tax Prohibition', 
+                'State Fund/Health', 
+                'Legal/Gov Process'
+            ],
+            datasets: [{
+                label: 'Proposals by Category',
+                data: [7, 3, 3, 4],
+                backgroundColor: [
+                    '#06D6A0', 
+                    '#EF476F', 
+                    '#FFD166', 
+                    '#118AB2'  
+                ],
+                borderWidth: 0,
+                hoverOffset: 4
+            }]
+        };
+
+        const ctxDoughnut = document.getElementById('propositionsChart');
+        if (ctxDoughnut) {
+            new Chart(ctxDoughnut, {
+                type: 'doughnut',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false 
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+            
+            const legendContainer = document.getElementById('chart-legend');
+            if (legendContainer) {
+                chartData.labels.forEach((label, i) => {
+                    const color = chartData.datasets[0].backgroundColor[i];
+                    const legendItem = `
+                        <div class="flex items-center">
+                            <span class="h-3 w-3 rounded-full mr-2" style="background-color: ${color}"></span>
+                            <span class="text-sm text-gray-700">${label} (${chartData.datasets[0].data[i]})</span>
+                        </div>
+                    `;
+                    legendContainer.innerHTML += legendItem;
+                });
+            }
+        }
+
+        const barCtx = document.getElementById('homesteadChart');
+        if (barCtx) {
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Current Exemption', 'Proposed Exemption (Prop 13)'],
+                    datasets: [{
+                        label: 'School District Homestead Exemption',
+                        data: [100000, 140000],
+                        backgroundColor: ['#118AB2', '#06D6A0'],
+                        borderColor: ['#118AB2', '#06D6A0'],
+                        borderWidth: 1,
+                        barThickness: 60
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + (value / 1000) + 'k';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback,
+                                label: function(context) {
+                                    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(context.raw);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
